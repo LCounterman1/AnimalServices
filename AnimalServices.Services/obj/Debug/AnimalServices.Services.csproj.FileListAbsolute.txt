@@ -1,0 +1,16 @@
+C:\ElevenFiftyProjects\3_RedBadge\AnimalServices.MVC\AnimalServices.MVC\AnimalServices.Services\bin\Debug\AnimalServices.Services.dll
+C:\ElevenFiftyProjects\3_RedBadge\AnimalServices.MVC\AnimalServices.MVC\AnimalServices.Services\bin\Debug\AnimalServices.Services.pdb
+C:\ElevenFiftyProjects\3_RedBadge\AnimalServices.MVC\AnimalServices.MVC\AnimalServices.Services\obj\Debug\AnimalServices.Services.csproj.AssemblyReference.cache
+C:\ElevenFiftyProjects\3_RedBadge\AnimalServices.MVC\AnimalServices.MVC\AnimalServices.Services\obj\Debug\AnimalServices.Services.csproj.CoreCompileInputs.cache
+C:\ElevenFiftyProjects\3_RedBadge\AnimalServices.MVC\AnimalServices.MVC\AnimalServices.Services\obj\Debug\AnimalServices.Services.dll
+C:\ElevenFiftyProjects\3_RedBadge\AnimalServices.MVC\AnimalServices.MVC\AnimalServices.Services\obj\Debug\AnimalServices.Services.pdb
+C:\ElevenFiftyProjects\3_RedBadge\AnimalServices.MVC\AnimalServices.MVC\AnimalServices.Services\bin\Debug\AnimalServices.Services.dll.config
+C:\ElevenFiftyProjects\3_RedBadge\AnimalServices.MVC\AnimalServices.MVC\AnimalServices.Services\bin\Debug\EntityFramework.dll
+C:\ElevenFiftyProjects\3_RedBadge\AnimalServices.MVC\AnimalServices.MVC\AnimalServices.Services\bin\Debug\EntityFramework.SqlServer.dll
+C:\ElevenFiftyProjects\3_RedBadge\AnimalServices.MVC\AnimalServices.MVC\AnimalServices.Services\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\ElevenFiftyProjects\3_RedBadge\AnimalServices.MVC\AnimalServices.MVC\AnimalServices.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\ElevenFiftyProjects\3_RedBadge\AnimalServices.MVC\AnimalServices.MVC\AnimalServices.Services\bin\Debug\EntityFramework.xml
+C:\ElevenFiftyProjects\3_RedBadge\AnimalServices.MVC\AnimalServices.MVC\AnimalServices.Services\bin\Debug\EntityFramework.SqlServer.xml
+C:\ElevenFiftyProjects\3_RedBadge\AnimalServices.MVC\AnimalServices.MVC\AnimalServices.Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\ElevenFiftyProjects\3_RedBadge\AnimalServices.MVC\AnimalServices.MVC\AnimalServices.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\ElevenFiftyProjects\3_RedBadge\AnimalServices.MVC\AnimalServices.MVC\AnimalServices.Services\obj\Debug\AnimalServices.Services.csproj.CopyComplete
