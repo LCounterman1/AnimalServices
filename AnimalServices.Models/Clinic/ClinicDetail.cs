@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AnimalServices.Models.Clinic
 {
-    public class ClinicCreate
+    public class ClinicDetail
     {
         public string Name { get; set; }
         public string Address { get; set; }

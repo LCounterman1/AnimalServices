@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AnimalServices.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,7 @@ namespace AnimalServices.Models.Animal
 {
     public class AnimalListItem
     {
+        public string Name { get; set; }
+        public Species Species { get; set; }
     }
 }

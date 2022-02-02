@@ -59,7 +59,7 @@
     <Compile Include="Animal\AnimalEdit.cs" />
     <Compile Include="Animal\AnimalListItem.cs" />
     <Compile Include="Clinic\ClinicCreate.cs" />
-    <Compile Include="Clinic\ClinicDelete.cs" />
+    <Compile Include="Clinic\ClinicDetail.cs" />
     <Compile Include="Clinic\ClinicEdit.cs" />
     <Compile Include="Clinic\ClinicListItem.cs" />
     <Compile Include="HealthRecord\HealthRecordCreate.cs" />
@@ -80,6 +80,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\AnimalServices.Data\AnimalServices.Data.csproj">
+      <Project>{133B62CF-F761-4608-B025-63810264C40E}</Project>
+      <Name>AnimalServices.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
