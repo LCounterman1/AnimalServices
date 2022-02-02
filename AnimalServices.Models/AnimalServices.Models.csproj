@@ -54,11 +54,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Animal\AnimalCreate.cs" />
+    <Compile Include="Animal\AnimalDetail.cs" />
+    <Compile Include="Animal\AnimalEdit.cs" />
+    <Compile Include="Animal\AnimalListItem.cs" />
+    <Compile Include="Clinic\ClinicCreate.cs" />
+    <Compile Include="Clinic\ClinicDelete.cs" />
+    <Compile Include="Clinic\ClinicEdit.cs" />
+    <Compile Include="Clinic\ClinicListItem.cs" />
+    <Compile Include="HealthRecord\HealthRecordCreate.cs" />
+    <Compile Include="HealthRecord\HealthRecordDelete.cs" />
+    <Compile Include="HealthRecord\HealthRecordEdit.cs" />
+    <Compile Include="HealthRecord\HealthRecordListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registry\RegistryCreate.cs" />
+    <Compile Include="Registry\RegistryDelete.cs" />
+    <Compile Include="Registry\RegistryEdit.cs" />
+    <Compile Include="Registry\RegistryListItem.cs" />
+    <Compile Include="Service\ServiceCreate.cs" />
+    <Compile Include="Service\ServiceDelete.cs" />
+    <Compile Include="Service\ServiceEdit.cs" />
+    <Compile Include="Service\ServiceListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AnimalServices.Data
 {
-    public class Services
+    public class Service
     {
         public int ID { get; set; }
         public Service Service { get; set; }
