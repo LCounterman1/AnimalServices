@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace AnimalServices.Data
 {
+    public enum ServiceType { vaccines, grooming, surgical, dental}
     public class Service
     {
         public int ID { get; set; }
-        public Service Service { get; set; }
+        public ServiceType ServiceType { get; set; }
         public int Price { get; set; }
         public int Length { get; set; }
         public int ClinicID { get; set; }

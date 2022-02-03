@@ -239,10 +239,10 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Animal\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Animal\" />
     <Folder Include="Views\Clinic\" />
     <Folder Include="Views\HealthRecord\" />
     <Folder Include="Views\Registry\" />

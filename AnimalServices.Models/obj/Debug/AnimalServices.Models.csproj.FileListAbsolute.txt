@@ -14,3 +14,6 @@ C:\ElevenFiftyProjects\3_RedBadge\AnimalServices.MVC\AnimalServices.MVC\AnimalSe
 C:\ElevenFiftyProjects\3_RedBadge\AnimalServices.MVC\AnimalServices.MVC\AnimalServices.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\ElevenFiftyProjects\3_RedBadge\AnimalServices.MVC\AnimalServices.MVC\AnimalServices.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\ElevenFiftyProjects\3_RedBadge\AnimalServices.MVC\AnimalServices.MVC\AnimalServices.Models\obj\Debug\AnimalServices.Models.csproj.CopyComplete
+C:\ElevenFiftyProjects\3_RedBadge\AnimalServices.MVC\AnimalServices.MVC\AnimalServices.Models\bin\Debug\AnimalServices.Data.dll
+C:\ElevenFiftyProjects\3_RedBadge\AnimalServices.MVC\AnimalServices.MVC\AnimalServices.Models\bin\Debug\AnimalServices.Data.pdb
+C:\ElevenFiftyProjects\3_RedBadge\AnimalServices.MVC\AnimalServices.MVC\AnimalServices.Models\bin\Debug\AnimalServices.Data.dll.config
