@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AnimalServices.Services
 {
-    public class ClinicServices
+    public class RegistryService
     {
     }
 }
