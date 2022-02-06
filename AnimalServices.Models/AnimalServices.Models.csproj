@@ -63,7 +63,7 @@
     <Compile Include="Clinic\ClinicEdit.cs" />
     <Compile Include="Clinic\ClinicListItem.cs" />
     <Compile Include="HealthRecord\HealthRecordCreate.cs" />
-    <Compile Include="HealthRecord\HealthRecordDelete.cs" />
+    <Compile Include="HealthRecord\HealthRecordDetail.cs" />
     <Compile Include="HealthRecord\HealthRecordEdit.cs" />
     <Compile Include="HealthRecord\HealthRecordListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

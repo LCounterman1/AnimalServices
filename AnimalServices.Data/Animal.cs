@@ -11,7 +11,8 @@ namespace AnimalServices.Data
     public class Animal
     {
         [Key]
-        public int ID { get; set; }
+        public int Id { get; set; }
+        public Guid UserId { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]

@@ -10,12 +10,13 @@ namespace AnimalServices.Data
     public class HealthRecord
     {
   
-        public int ID { get; set; }
+        public int HealthRecordId { get; set; }
+        public int UserID { get; set; }
         public RecordType RecordType { get; set; }
         public DateTime DateGiven { get; set; }
         public string FrequencyNeeded { get; set; }
         public string Comments { get; set; }
-        public int AnimalID { get; set; }
+        public int AnimalId { get; set; }
         public virtual Animal Animal { get; set; }
     }
 }

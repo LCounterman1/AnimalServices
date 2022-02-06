@@ -10,18 +10,17 @@ namespace AnimalServices.Services
 {
     public class AnimalService
     {
-        private readonly Guid _userID;
+        private readonly Guid _userId;
 
-        public AnimalService(Guid userID)
+        public AnimalService(Guid userId)
         {
-            _userID = userID;
+            _userId = userId;
         }
         public bool CreateAnimal(AnimalCreate model)
         {
             var entity =
                 new Animal()
                 {
-                    _userID = _userID,
                     Name = model.Name,
                     Species = model.Species,
                     DateOfBirth = model.DateOfBirth,
@@ -45,12 +44,15 @@ namespace AnimalServices.Services
                 var query =
                     ctx
                         .Animals
-                        .Where(e => e.userID == _userID)
+                        .Where(e => e.UserId == _userId)
                         .Select(
                             e =>
                                 new AnimalListItem
                                 {
-                                    
+                                    AnimalId = e.Id,
+                                    Name = e.Name,
+                                    DateOfBirth = e.DateOfBirth
+
                                 }
                         );
 
@@ -65,42 +67,52 @@ namespace AnimalServices.Services
                 var entity =
                     ctx
                         .Animals
-                        .Single(e => e.AnimalID == id && e.OwnerID == _userID);
+                        .Single(e => e.Id == id && e.UserId == _userId);
                 return
                     new AnimalDetail
                     {
-                        
+                        AnimalId = entity.Id,
+                        Name = entity.Name,
+                        Species = entity.Species,
+                        DateOfBirth = entity.DateOfBirth,
+                        Weight = entity.Weight,
+                        State = entity.State,
+                        IsFood = entity.IsFood,
+                        IsBred = entity.IsBred
                     };
             }
         }
 
-        public bool UpdateNote(NoteEdit model)
+        public bool UpdateAnimal(AnimalEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                        .Notes
-                        .Single(e => e.NoteId == model.NoteId && e.OwnerId == _userId);
+                        .Animals
+                        .Single(e => e.Id == model.AnimalId && e.UserId == _userId);
+                entity.Id = model.AnimalId;
+                entity.Name = model.Name;
+                entity.Weight = model.Weight;
+                entity.State = model.State;
+                entity.IsBred = model.IsBred;
 
-                entity.Title = model.Title;
-                entity.Content = model.Content;
-                entity.ModifiedUtc = DateTimeOffset.UtcNow;
+
 
                 return ctx.SaveChanges() == 1;
             }
         }
 
-        public bool DeleteNote(int noteId)
+        public bool DeleteAnimal(int animalId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                        .Notes
-                        .Single(e => e.NoteId == noteId && e.OwnerId == _userId);
+                        .Animals
+                        .Single(e => e.Id == animalId && e.UserId == _userId);
 
-                ctx.Notes.Remove(entity);
+                ctx.Animals.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }

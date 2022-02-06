@@ -9,6 +9,7 @@ namespace AnimalServices.Models.Animal
 {
     public class AnimalEdit
     {
+        public int AnimalId { get; set; }
         public string Name { get; set; }
         public int Weight { get; set; }
         public string State { get; set; }

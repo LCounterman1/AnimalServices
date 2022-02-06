@@ -9,12 +9,8 @@ namespace AnimalServices.Models.Animal
 {
     public class AnimalListItem
     {
+        public int AnimalId { get; set; }
         public string Name { get; set; }
-        public Species Species { get; set; }
         public DateTime DateOfBirth { get; set; }
-        public int Weight { get; set; }
-        public string State { get; set; }
-        public bool IsFood { get; set; }
-        public bool IsBred { get; set; }
     }
 }

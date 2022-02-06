@@ -9,6 +9,7 @@ namespace AnimalServices.Models.Clinic
 {
     public class ClinicListItem
     {
+        public int ClinicId { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
         public ClinicType ClinicType { get; set; }

@@ -34,6 +34,10 @@ namespace AnimalServices.Data
         }
 
         public DbSet<Animal> Animals { get; set; }
+        public DbSet<HealthRecord> HealthRecords { get; set; }
+        public DbSet<Clinic> Clinics { get; set; }
+        public DbSet<Service> Services { get; set; }
+        public DbSet<Registry> Registries { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
