@@ -66,6 +66,9 @@ namespace AnimalServices.MVC.Controllers
             var model =
                 new ClinicEdit
                 {
+                    Name = detail.Name,
+                    Address = detail.Address,
+                    ClinicType = detail.ClinicType,
                     
                 };
             return View(model);

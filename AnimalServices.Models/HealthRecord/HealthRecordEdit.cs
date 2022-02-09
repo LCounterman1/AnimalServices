@@ -10,6 +10,5 @@ namespace AnimalServices.Models.HealthRecord
     {
         public int HealthRecordId { get; set; }
         public string Comments { get; set; }
-        public int UserId { get; set; }
     }
 }

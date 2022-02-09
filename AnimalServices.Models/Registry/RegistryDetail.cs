@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace AnimalServices.Models.Registry
 {
-    public class RegistryDelete
+    public class RegistryDetail
     {
+        public DateTime AptDate { get; set; }
+        public DateTime AptTime { get; set; }
+        public int AnimalID { get; set; }
     }
 }

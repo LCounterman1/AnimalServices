@@ -1,6 +1,7 @@
 ﻿using AnimalServices.Models.Service;
 using AnimalServices.Models.Services;
 using AnimalServices.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace AnimalServices.MVC.Controllers
     {
         public ActionResult Index()
         {
-            var userID = Guid.Parse(User.Identity.GetUserID());
+            var userID = Guid.Parse(User.Identity.GetUserId());
             var service = new ServiceService(userID);
             var model = service.GetServices();
             return View(model);
@@ -46,7 +47,7 @@ namespace AnimalServices.MVC.Controllers
 
         private ServiceService CreateServiceService()
         {
-            var userID = Guid.Parse(User.Identity.GetUserID());
+            var userID = Guid.Parse(User.Identity.GetUserId());
             var service = new ServiceService(userID);
             return service;
         }
@@ -54,7 +55,7 @@ namespace AnimalServices.MVC.Controllers
         public ActionResult Details(int id)
         {
             var svc = CreateServiceService();
-            var model = svc.GetServiceByID(id);
+            var model = svc.GetServiceById(id);
 
             return View(model);
         }
@@ -62,7 +63,7 @@ namespace AnimalServices.MVC.Controllers
         public ActionResult Edit(int id)
         {
             var service = CreateServiceService();
-            var detail = service.GetServiceByID(id);
+            var detail = service.GetServiceById(id);
             var model =
                 new ServiceEdit
                 {
@@ -77,7 +78,7 @@ namespace AnimalServices.MVC.Controllers
         {
             if (!ModelState.IsValid) return View(model);
 
-            if (model.ServiceID != id)
+            if (model.ServiceId != id)
             {
                 ModelState.AddModelError("", "ID Mismatch");
                 return View(model);
@@ -99,7 +100,7 @@ namespace AnimalServices.MVC.Controllers
         public ActionResult Delete(int id)
         {
             var svc = CreateServiceService();
-            var model = svc.GetServiceByID(id);
+            var model = svc.GetServiceById(id);
 
             return View(model);
         }

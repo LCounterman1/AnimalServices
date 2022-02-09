@@ -16,18 +16,20 @@ namespace AnimalServices.Services
         {
             _userId = userId;
         }
-        public bool CreateAnimal(AnimalCreate model)
+        public bool CreateAnimal(AnimalCreate animal)
         {
+            if (animal is null) return false;
+
             var entity =
                 new Animal()
                 {
-                    Name = model.Name,
-                    Species = model.Species,
-                    DateOfBirth = model.DateOfBirth,
-                    Weight = model.Weight,
-                    State = model.State,
-                    IsFood = model.IsFood,
-                    IsBred = model.IsBred,
+                    Name = animal.Name,
+                    Species = animal.Species,
+                    DateOfBirth = animal.DateOfBirth,
+                    Weight = animal.Weight,
+                    State = animal.State,
+                    IsFood = animal.IsFood,
+                    IsBred = animal.IsBred,
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -44,12 +46,11 @@ namespace AnimalServices.Services
                 var query =
                     ctx
                         .Animals
-                        .Where(e => e.UserId == _userId)
                         .Select(
                             e =>
                                 new AnimalListItem
                                 {
-                                    AnimalId = e.Id,
+                                    AnimalId = e.AnimalId,
                                     Name = e.Name,
                                     DateOfBirth = e.DateOfBirth
 
@@ -62,61 +63,82 @@ namespace AnimalServices.Services
 
         public AnimalDetail GetAnimalById(int id)
         {
-            using (var ctx = new ApplicationDbContext())
+            try
             {
-                var entity =
-                    ctx
-                        .Animals
-                        .Single(e => e.Id == id && e.UserId == _userId);
-                return
-                    new AnimalDetail
-                    {
-                        AnimalId = entity.Id,
-                        Name = entity.Name,
-                        Species = entity.Species,
-                        DateOfBirth = entity.DateOfBirth,
-                        Weight = entity.Weight,
-                        State = entity.State,
-                        IsFood = entity.IsFood,
-                        IsBred = entity.IsBred
-                    };
+                using (var ctx = new ApplicationDbContext())
+                {
+                    var entity =
+                        ctx
+                            .Animals
+                            .Single(e => e.AnimalId == id);
+                    return
+                        new AnimalDetail
+                        {
+                            AnimalId = entity.AnimalId,
+                            Name = entity.Name,
+                            Species = entity.Species,
+                            DateOfBirth = entity.DateOfBirth,
+                            Weight = entity.Weight,
+                            State = entity.State,
+                            IsFood = entity.IsFood,
+                            IsBred = entity.IsBred
+                        };
+                }
+            }
+            catch
+            {
+                return null;
             }
         }
 
-        public bool UpdateAnimal(AnimalEdit model)
+        public bool UpdateAnimal(AnimalEdit animal)
         {
-            using (var ctx = new ApplicationDbContext())
+            try
             {
-                var entity =
-                    ctx
-                        .Animals
-                        .Single(e => e.Id == model.AnimalId && e.UserId == _userId);
-                entity.Id = model.AnimalId;
-                entity.Name = model.Name;
-                entity.Weight = model.Weight;
-                entity.State = model.State;
-                entity.IsBred = model.IsBred;
+                using (var ctx = new ApplicationDbContext())
+                {
+                    var entity =
+                        ctx
+                            .Animals
+                            .Single(e => e.AnimalId == animal.AnimalId);
+                    entity.AnimalId = animal.AnimalId;
+                    entity.Name = animal.Name;
+                    entity.Weight = animal.Weight;
+                    entity.State = animal.State;
+                    entity.IsBred = animal.IsBred;
 
 
 
-                return ctx.SaveChanges() == 1;
+                    return ctx.SaveChanges() == 1;
+                }
+            }
+            catch
+            {
+                return false;
             }
         }
 
         public bool DeleteAnimal(int animalId)
         {
-            using (var ctx = new ApplicationDbContext())
+            try
             {
-                var entity =
-                    ctx
-                        .Animals
-                        .Single(e => e.Id == animalId && e.UserId == _userId);
+                using (var ctx = new ApplicationDbContext())
+                {
+                    var entity =
+                        ctx
+                            .Animals
+                            .Single(e => e.AnimalId == animalId);
 
-                ctx.Animals.Remove(entity);
+                    ctx.Animals.Remove(entity);
 
-                return ctx.SaveChanges() == 1;
+                    return ctx.SaveChanges() == 1;
+                }
             }
-        }
+            catch
+            {
+                return false;
+            }
 
+        }
     }
 }

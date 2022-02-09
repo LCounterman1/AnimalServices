@@ -13,7 +13,6 @@ namespace AnimalServices.Data
     {
         [Key]
         public int ClinicId { get; set; }
-        public Guid UserId { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]

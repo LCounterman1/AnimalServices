@@ -66,6 +66,10 @@ namespace AnimalServices.MVC.Controllers
             var model =
                 new AnimalEdit
                 {
+                    Name = detail.Name,
+                    Weight = detail.Weight,
+                    State = detail.State,
+                    IsBred = detail.IsBred,
                    
                 };
             return View(model);

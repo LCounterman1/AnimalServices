@@ -40,7 +40,6 @@ namespace AnimalServices.Services
                 var query =
                     ctx
                         .Clinics
-                        .Where(e => e.UserId == _userId)
                         .Select(
                             e =>
                                 new ClinicListItem
@@ -63,7 +62,7 @@ namespace AnimalServices.Services
                 var entity =
                     ctx
                         .Clinics
-                        .Single(e => e.ClinicId == id && e.UserId == _userId);
+                        .Single(e => e.ClinicId == id);
                 return
                     new ClinicDetail
                     {
@@ -82,7 +81,7 @@ namespace AnimalServices.Services
                 var entity =
                     ctx
                         .Clinics
-                        .Single(e => e.ClinicId == model.ClinicId && e.UserId == _userId);
+                        .Single(e => e.ClinicId == model.ClinicId);
                 entity.ClinicId = model.ClinicId;
                 entity.Name = model.Name;
                 entity.Address = model.Address;
@@ -100,7 +99,7 @@ namespace AnimalServices.Services
                 var entity =
                     ctx
                         .Clinics
-                        .Single(e => e.ClinicId == clinicId && e.UserId == _userId);
+                        .Single(e => e.ClinicId == clinicId);
 
                 ctx.Clinics.Remove(entity);
 

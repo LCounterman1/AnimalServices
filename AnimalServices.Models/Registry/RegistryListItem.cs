@@ -8,5 +8,8 @@ namespace AnimalServices.Models.Registry
 {
     public class RegistryListItem
     {
+        public DateTime AptDate { get; set; }
+        public DateTime AptTime { get; set; }
+        public int AnimalID { get; set; }
     }
 }

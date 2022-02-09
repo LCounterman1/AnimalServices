@@ -66,7 +66,7 @@ namespace AnimalServices.MVC.Controllers
             var model =
                 new HealthRecordEdit
                 {
-                    
+                    Comments = detail.Comments,
                 };
             return View(model);
         }

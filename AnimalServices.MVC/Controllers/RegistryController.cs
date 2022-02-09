@@ -1,5 +1,6 @@
 ﻿using AnimalServices.Models.Registry;
 using AnimalServices.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace AnimalServices.MVC.Controllers
     {
         public ActionResult Index()
         {
-            var userID = Guid.Parse(User.Identity.GetUserID());
+            var userID = Guid.Parse(User.Identity.GetUserId());
             var service = new RegistryService(userID);
             var model = service.GetRegistries();
             return View(model);
@@ -45,15 +46,15 @@ namespace AnimalServices.MVC.Controllers
 
         private RegistryService CreateRegistryService()
         {
-            var userID = Guid.Parse(User.Identity.GetUserID());
-            var service = new RegistryService(userID);
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new RegistryService(userId);
             return service;
         }
 
         public ActionResult Details(int id)
         {
             var svc = CreateRegistryService();
-            var model = svc.GetRegistryByID(id);
+            var model = svc.GetRegistryById(id);
 
             return View(model);
         }
@@ -61,7 +62,7 @@ namespace AnimalServices.MVC.Controllers
         public ActionResult Edit(int id)
         {
             var service = CreateRegistryService();
-            var detail = service.GetRegistryByID(id);
+            var detail = service.GetRegistryById(id);
             var model =
                 new RegistryEdit
                 {
@@ -76,9 +77,9 @@ namespace AnimalServices.MVC.Controllers
         {
             if (!ModelState.IsValid) return View(model);
 
-            if (model.RegistryID != id)
+            if (model.RegistryId != id)
             {
-                ModelState.AddModelError("", "ID Mismatch");
+                ModelState.AddModelError("", "Id Mismatch");
                 return View(model);
             }
 
@@ -98,7 +99,7 @@ namespace AnimalServices.MVC.Controllers
         public ActionResult Delete(int id)
         {
             var svc = CreateRegistryService();
-            var model = svc.GetRegistryByID(id);
+            var model = svc.GetRegistryById(id);
 
             return View(model);
         }

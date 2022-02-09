@@ -21,9 +21,11 @@ namespace AnimalServices.Services
             var entity =
                 new HealthRecord()
                 {
-                    Name = model.Name,
-                    Address = model.Address,
-                    ClinicType = model.ClinicType,
+                    RecordType = model.RecordType,
+                    DateGiven = model.DateGiven,
+                    FrequencyNeeded = model.FrequencyNeeded,
+                    Comments = model.Comments,
+                    AnimalId = model.AnimalId
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -40,15 +42,15 @@ namespace AnimalServices.Services
                 var query =
                     ctx
                         .HealthRecords
-                        .Where(e => e.UserId == _userId)
                         .Select(
                             e =>
                                 new HealthRecordListItem
                                 {
-                                    ClinicId = e.ClinicId,
-                                    Name = e.Name,
-                                    Address = e.Address,
-                                    ClinicType = e.ClinicType
+                                    HealthRecordId = e.HealthRecordId,
+                                    AnimalId = e.AnimalId,
+                                    RecordType = e.RecordType,
+                                    DateGiven = e.DateGiven,
+                                    FrequencyNeeded = e.FrequencyNeeded
                                 }
                         );
 
@@ -63,14 +65,17 @@ namespace AnimalServices.Services
                 var entity =
                     ctx
                         .HealthRecords
-                        .Single(e => e.HealthRecordId == id && e.UserId == _userId);
+                        .Single(e => e.HealthRecordId == id);
                 return
                     new HealthRecordDetail
                     {
-                        ClinicId = entity.ClinicId,
-                        Name = entity.Name,
-                        Address = entity.Address,
-                        ClinicType = entity.ClinicType
+                        HealthRecordId = entity.HealthRecordId,
+                        RecordType = entity.RecordType,
+                        DateGiven = entity.DateGiven,
+                        FrequencyNeeded = entity.FrequencyNeeded,
+                        Comments = entity.Comments,
+                        AnimalId = entity.AnimalId
+
                     };
             }
         }
@@ -82,11 +87,9 @@ namespace AnimalServices.Services
                 var entity =
                     ctx
                         .HealthRecords
-                        .Single(e => e.HealthRecordId == model.HealthRecordId && e.UserId == _userId);
-                entity.ClinicId = model.Id;
-                entity.Name = model.Name;
-                entity.Address = model.Address;
-                entity.ClinicType = model.ClinicType;
+                        .Single(e => e.HealthRecordId == model.HealthRecordId);
+                entity.HealthRecordId = model.HealthRecordId;
+                entity.Comments = model.Comments;
 
 
                 return ctx.SaveChanges() == 1;
@@ -100,7 +103,7 @@ namespace AnimalServices.Services
                 var entity =
                     ctx
                         .HealthRecords
-                        .Single(e => e.HealthRecordId == healthRecordId && e.UserId == _userId);
+                        .Single(e => e.HealthRecordId == healthRecordId);
 
                 ctx.HealthRecords.Remove(entity);
 
@@ -108,3 +111,4 @@ namespace AnimalServices.Services
             }
         }
     }
+}

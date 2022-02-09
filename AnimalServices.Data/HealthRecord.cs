@@ -11,7 +11,6 @@ namespace AnimalServices.Data
     {
   
         public int HealthRecordId { get; set; }
-        public int UserID { get; set; }
         public RecordType RecordType { get; set; }
         public DateTime DateGiven { get; set; }
         public string FrequencyNeeded { get; set; }

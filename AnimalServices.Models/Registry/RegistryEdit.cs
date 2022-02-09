@@ -8,5 +8,8 @@ namespace AnimalServices.Models.Registry
 {
     public class RegistryEdit
     {
+        public int RegistryId { get; set; }
+        public DateTime AptDate { get; set; }
+        public DateTime AptTime { get; set; }
     }
 }
