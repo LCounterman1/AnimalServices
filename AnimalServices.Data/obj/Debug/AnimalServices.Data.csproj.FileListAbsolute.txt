@@ -14,3 +14,5 @@ C:\ElevenFiftyProjects\3_RedBadge\AnimalServices.MVC\AnimalServices.MVC\AnimalSe
 C:\ElevenFiftyProjects\3_RedBadge\AnimalServices.MVC\AnimalServices.MVC\AnimalServices.Data\obj\Debug\AnimalServices.Data.csproj.CopyComplete
 C:\ElevenFiftyProjects\3_RedBadge\AnimalServices.MVC\AnimalServices.MVC\AnimalServices.Data\obj\Debug\AnimalServices.Data.dll
 C:\ElevenFiftyProjects\3_RedBadge\AnimalServices.MVC\AnimalServices.MVC\AnimalServices.Data\obj\Debug\AnimalServices.Data.pdb
+C:\ElevenFiftyProjects\3_RedBadge\AnimalServices.MVC\AnimalServices.MVC\AnimalServices.Data\obj\Debug\AnimalServices.Data.csproj.GenerateResource.cache
+C:\ElevenFiftyProjects\3_RedBadge\AnimalServices.MVC\AnimalServices.MVC\AnimalServices.Data\obj\Debug\AnimalServices.Data.Migrations.TestMigration.resources
