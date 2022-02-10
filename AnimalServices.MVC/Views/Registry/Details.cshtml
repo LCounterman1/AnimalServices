@@ -1,0 +1,42 @@
+﻿@model AnimalServices.Models.Registry.RegistryDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RegistryDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AptDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AptDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AptTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AptTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnimalID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnimalID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
