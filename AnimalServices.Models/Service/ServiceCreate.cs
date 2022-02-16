@@ -12,5 +12,6 @@ namespace AnimalServices.Models.Services
         public ServiceType ServiceType { get; set; }
         public int Price { get; set; }
         public int Length { get; set; }
+        public int ClinicId { get; set; }
     }
 }

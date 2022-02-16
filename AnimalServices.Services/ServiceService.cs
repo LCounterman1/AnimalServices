@@ -19,12 +19,15 @@ namespace AnimalServices.Services
         }
         public bool CreateService(ServiceCreate service)
         {
-            if (service is null) return false;
 
             var entity =
                 new Service()
                 {
-                  
+                    ServiceType = service.ServiceType,
+                    Price = service.Price,
+                    Length = service.Length,
+                    ClinicId = service.ClinicId
+
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -45,7 +48,11 @@ namespace AnimalServices.Services
                             e =>
                                 new ServiceListItem
                                 {
-                                    
+                                    ServiceId = e.ServiceId,
+                                    ServiceType = e.ServiceType,
+                                    ClinicId = e.ClinicId,
+                                    Price = e.Price,
+                                    Length = e.Length
 
                                 }
                         );
@@ -56,71 +63,62 @@ namespace AnimalServices.Services
 
         public ServiceDetail GetServiceById(int id)
         {
-            try
+            using (var ctx = new ApplicationDbContext())
             {
-                using (var ctx = new ApplicationDbContext())
-                {
-                    var entity =
-                        ctx
-                            .Services
-                            .Single(e => e.ServiceId == id);
-                    return
-                        new ServiceDetail
-                        {
-                           
-                        };
-                }
-            }
-            catch
-            {
-                return null;
+                var entity =
+                    ctx
+                        .Services
+                        .Single(e => e.ServiceId == id);
+                return
+                    new ServiceDetail
+                    {
+                        ServiceId = entity.ServiceId,
+                        ServiceType = entity.ServiceType,
+                        Price = entity.Price,
+                        Length = entity.Length,
+                        ClinicId = entity.ClinicId,
+                        ClinicName = entity.Clinic.Name
+                    };
             }
         }
+
 
         public bool UpdateService(ServiceEdit service)
         {
-            try
+
+            using (var ctx = new ApplicationDbContext())
             {
-                using (var ctx = new ApplicationDbContext())
-                {
-                    var entity =
-                        ctx
-                            .Services
-                            .Single(e => e.ServiceId == service.ServiceId);
-                    
+                var entity =
+                    ctx
+                        .Services
+                        .Single(e => e.ServiceId == service.ServiceId);
+
+                entity.ServiceType = service.ServiceType;
+                entity.Price = service.Price;
+                entity.Length = service.Length;
 
 
-
-                    return ctx.SaveChanges() == 1;
-                }
-            }
-            catch
-            {
-                return false;
+                return ctx.SaveChanges() == 1;
             }
         }
+
+
 
         public bool DeleteService(int serviceId)
         {
-            try
+
+            using (var ctx = new ApplicationDbContext())
             {
-                using (var ctx = new ApplicationDbContext())
-                {
-                    var entity =
-                        ctx
-                            .Services
-                            .Single(e => e.ServiceId == serviceId);
+                var entity =
+                    ctx
+                        .Services
+                        .Single(e => e.ServiceId == serviceId);
 
-                    ctx.Services.Remove(entity);
+                ctx.Services.Remove(entity);
 
-                    return ctx.SaveChanges() == 1;
-                }
+                return ctx.SaveChanges() == 1;
             }
-            catch
-            {
-                return false;
-            }
-
         }
+
     }
 }

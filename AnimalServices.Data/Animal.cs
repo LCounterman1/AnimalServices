@@ -13,6 +13,8 @@ namespace AnimalServices.Data
         [Key]
         public int AnimalId { get; set; }
         [Required]
+        public Guid OwnerId { get; set; }
+        [Required]
         public string Name { get; set; }
         [Required]
         public Species Species { get; set; }

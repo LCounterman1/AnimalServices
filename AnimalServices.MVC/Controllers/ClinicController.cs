@@ -44,13 +44,6 @@ namespace AnimalServices.MVC.Controllers
             return View(model);
         }
 
-        private ClinicService CreateClinicService()
-        {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new ClinicService(userId);
-            return service;
-        }
-
         public ActionResult Details(int id)
         {
             var svc = CreateClinicService();
@@ -66,6 +59,7 @@ namespace AnimalServices.MVC.Controllers
             var model =
                 new ClinicEdit
                 {
+                    ClinicId = detail.ClinicId,
                     Name = detail.Name,
                     Address = detail.Address,
                     ClinicType = detail.ClinicType,
@@ -119,6 +113,13 @@ namespace AnimalServices.MVC.Controllers
             TempData["SaveResult"] = "Your clinic was deleted";
 
             return RedirectToAction("Index");
+        }
+
+        private ClinicService CreateClinicService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new ClinicService(userId);
+            return service;
         }
     }
 }

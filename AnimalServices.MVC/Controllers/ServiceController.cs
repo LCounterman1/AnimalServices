@@ -67,8 +67,11 @@ namespace AnimalServices.MVC.Controllers
             var model =
                 new ServiceEdit
                 {
-                    
-                };
+                    ServiceId = detail.ServiceId,
+                    ServiceType = detail.ServiceType,
+                    Price = detail.Price,
+                    Length = detail.Length,
+        };
             return View(model);
         }
 

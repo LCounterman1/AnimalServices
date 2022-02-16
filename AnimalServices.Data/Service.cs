@@ -18,11 +18,8 @@ namespace AnimalServices.Data
         public int Price { get; set; }
         public int Length { get; set; }
         [ForeignKey(nameof(Clinic))]
-        public int ClinicID { get; set; }
+        public int ClinicId { get; set; }
         public virtual Clinic Clinic { get; set; }
-        [ForeignKey(nameof(Animal))]
-        public int AnimalID { get; set; }
-        public virtual Animal Animal { get; set; }
 
     }
 }

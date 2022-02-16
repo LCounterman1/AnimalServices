@@ -11,6 +11,7 @@ namespace AnimalServices.Models.Animal
     {
         public int AnimalId { get; set; }
         public string Name { get; set; }
+        public Species Species { get; set; }
         public DateTime DateOfBirth { get; set; }
     }
 }

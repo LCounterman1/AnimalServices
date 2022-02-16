@@ -11,6 +11,7 @@ namespace AnimalServices.Models.HealthRecord
     {
         public int HealthRecordId { get; set; }
         public int AnimalId { get; set; }
+        public string AnimalName { get; set; }
         public RecordType RecordType { get; set; }
         public DateTime DateGiven { get; set; }
         public string FrequencyNeeded { get; set; }

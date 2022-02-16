@@ -3162,6 +3162,7 @@ fieldset[disabled] a.btn {
   background-color: #fff;
   border-color: #ccc;
 }
+
 .btn-default:focus,
 .btn-default.focus {
   color: #333;
@@ -5036,7 +5037,7 @@ a.badge:focus {
   padding-bottom: 30px;
   margin-bottom: 30px;
   color: inherit;
-  background-color: #eeeeee;
+  background-color: #eeee;
 }
 .jumbotron h1,
 .jumbotron .h1 {
@@ -5063,6 +5064,7 @@ a.badge:focus {
   .jumbotron {
     padding-top: 48px;
     padding-bottom: 48px;
+    background-color: lightgray;
   }
   .container .jumbotron,
   .container-fluid .jumbotron {

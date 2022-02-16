@@ -57,6 +57,14 @@
     <Compile Include="Animal.cs" />
     <Compile Include="Clinic.cs" />
     <Compile Include="HealthRecord.cs" />
+    <Compile Include="Migrations\202202152204410_InitialCreate.cs" />
+    <Compile Include="Migrations\202202152204410_InitialCreate.Designer.cs">
+      <DependentUpon>202202152204410_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202160243263_testingPart2.cs" />
+    <Compile Include="Migrations\202202160243263_testingPart2.Designer.cs">
+      <DependentUpon>202202160243263_testingPart2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IdentityModels.cs" />
@@ -66,6 +74,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202202152204410_InitialCreate.resx">
+      <DependentUpon>202202152204410_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202160243263_testingPart2.resx">
+      <DependentUpon>202202160243263_testingPart2.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

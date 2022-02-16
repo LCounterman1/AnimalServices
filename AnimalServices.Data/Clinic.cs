@@ -13,16 +13,14 @@ namespace AnimalServices.Data
     {
         [Key]
         public int ClinicId { get; set; }
+        public Guid ClinicOwnerId { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]
         public string Address { get; set; }
         public ClinicType ClinicType { get; set; }
-        [ForeignKey(nameof(Animal))]
-        public int AnimalId { get; set; }
-        public virtual Animal Animal { get; set; }
         [ForeignKey(nameof(HealthRecord))]
-        public int HealthRecordId { get; set; }
+        public int? HealthRecordId { get; set; }
         public virtual HealthRecord HealthRecord { get; set; }
     }
 }

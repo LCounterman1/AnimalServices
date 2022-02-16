@@ -19,6 +19,14 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.Species)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Species)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.DateOfBirth)
         </dt>
 
@@ -61,6 +69,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.AnimalID }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AnimalId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

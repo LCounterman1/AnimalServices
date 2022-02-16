@@ -16,11 +16,11 @@ namespace AnimalServices.Data
         public DateTime AptDate { get; set; }
         [Required]
         public DateTime AptTime { get; set; }
+        [ForeignKey(nameof(Service))]
+        public int ServiceId { get; set; }
+        public virtual Service Service { get; set; }
         [ForeignKey(nameof(Animal))]
-        public int AnimalID { get; set; }
+        public int AnimalId { get; set; }
         public virtual Animal Animal { get; set; }
-        [ForeignKey(nameof(Clinic))]
-        public int ClinicID { get; set; }
-        public virtual Clinic Clinic { get; set; }
     }
 }

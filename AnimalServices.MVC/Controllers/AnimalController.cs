@@ -44,12 +44,7 @@ namespace AnimalServices.MVC.Controllers
             return View(model);
         }
 
-        private AnimalService CreateAnimalService()
-        {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new AnimalService(userId);
-            return service;
-        }
+        
 
         public ActionResult Details(int id)
         {
@@ -66,6 +61,7 @@ namespace AnimalServices.MVC.Controllers
             var model =
                 new AnimalEdit
                 {
+                    AnimalId = detail.AnimalId,
                     Name = detail.Name,
                     Weight = detail.Weight,
                     State = detail.State,
@@ -76,7 +72,7 @@ namespace AnimalServices.MVC.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]  
         public ActionResult Edit(int id, AnimalEdit model)
         {
             if (!ModelState.IsValid) return View(model);
@@ -91,7 +87,7 @@ namespace AnimalServices.MVC.Controllers
 
             if (service.UpdateAnimal(model))
             {
-                TempData["SaveResult"] = "Your animal was updated.";
+                TempData["SaveResult"  ] = "Your animal was updated.";
                 return RedirectToAction("Index");
             }
 
@@ -120,6 +116,13 @@ namespace AnimalServices.MVC.Controllers
             TempData["SaveResult"] = "Your animal was deleted";
 
             return RedirectToAction("Index");
+        }
+
+        private AnimalService CreateAnimalService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new AnimalService(userId);
+            return service;
         }
     }
 }

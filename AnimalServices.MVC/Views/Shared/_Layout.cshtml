@@ -3,10 +3,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Animal Services Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+  
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -17,14 +17,17 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Animal Services", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
-                    <li>@Html.ActionLink("Animals", "Index", "Animal") </li>
+                        <li class="Animal">@Html.ActionLink("Animals", "Index", "Animal") </li>
+                        <li class="HealthRecord">@Html.ActionLink("Health Records", "Index", "HealthRecord")</li>
+                        <li class="Clinic">@Html.ActionLink("Clinics", "Index", "Clinic") </li>
+                        <li class="Service">@Html.ActionLink("Services", "Index", "Service")</li>
+                        <li class="Appointments">@Html.ActionLink("Appointments", "Index", "Registry")</li>
                     }
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
@@ -35,9 +38,8 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Animal Services Application</p>
         </footer>
     </div>
 

@@ -13,7 +13,6 @@ namespace AnimalServices.Models.Clinic
         public string Name { get; set; }
         public string Address { get; set; }
         public ClinicType ClinicType { get; set; }
-        public int AnimalID { get; set; }
-        public int HealthRecordID { get; set; }
+        public int HealthRecordId { get; set; }
     }
 }

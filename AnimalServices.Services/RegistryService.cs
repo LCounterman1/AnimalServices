@@ -18,12 +18,13 @@ namespace AnimalServices.Services
         }
         public bool CreateRegistry(RegistryCreate registry)
         {
-            if (registry is null) return false;
-
             var entity =
                 new Registry()
                 {
-
+                    AptDate = registry.AptDate,
+                    AptTime = registry.AptDate,
+                    AnimalId = registry.AnimalId,
+                    ServiceId = registry.ServiceId
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -44,8 +45,11 @@ namespace AnimalServices.Services
                             e =>
                                 new RegistryListItem
                                 {
-
-
+                                    RegistryId = e.RegistryId,
+                                    AnimalId = e.AnimalId,
+                                    ServiceId = e.ServiceId,
+                                    AptDate = e.AptDate,
+                                    AptTime = e.AptTime,
                                 }
                         );
 
@@ -55,71 +59,57 @@ namespace AnimalServices.Services
 
         public RegistryDetail GetRegistryById(int id)
         {
-            try
+            using (var ctx = new ApplicationDbContext())
             {
-                using (var ctx = new ApplicationDbContext())
-                {
-                    var entity =
-                        ctx
-                            .Registries
-                            .Single(e => e.RegistryId == id);
-                    return
-                        new RegistryDetail
-                        {
-
-                        };
-                }
-            }
-            catch
-            {
-                return null;
+                var entity =
+                    ctx
+                        .Registries
+                        .Single(e => e.RegistryId == id);
+                return
+                    new RegistryDetail
+                    {
+                        RegistryId = entity.RegistryId,
+                        AnimalId = entity.AnimalId,
+                        ServiceId = entity.ServiceId,
+                        AptDate = entity.AptDate,
+                        AptTime = entity.AptTime
+                    };
             }
         }
+
 
         public bool UpdateRegistry(RegistryEdit registry)
         {
-            try
+            using (var ctx = new ApplicationDbContext())
             {
-                using (var ctx = new ApplicationDbContext())
-                {
-                    var entity =
-                        ctx
-                            .Registries
-                            .Single(e => e.RegistryId == registry.RegistryId);
+                var entity =
+                    ctx
+                        .Registries
+                        .Single(e => e.RegistryId == registry.RegistryId);
 
+                entity.AptDate = registry.AptDate;
+                entity.AptTime = registry.AptTime;
 
-
-
-                    return ctx.SaveChanges() == 1;
-                }
-            }
-            catch
-            {
-                return false;
+                return ctx.SaveChanges() == 1;
             }
         }
+
+
 
         public bool DeleteRegistry(int registryId)
         {
-            try
+            using (var ctx = new ApplicationDbContext())
             {
-                using (var ctx = new ApplicationDbContext())
-                {
-                    var entity =
-                        ctx
-                            .Registries
-                            .Single(e => e.RegistryId == registryId);
+                var entity =
+                    ctx
+                        .Registries
+                        .Single(e => e.RegistryId == registryId);
 
-                    ctx.Registries.Remove(entity);
+                ctx.Registries.Remove(entity);
 
-                    return ctx.SaveChanges() == 1;
-                }
+                return ctx.SaveChanges() == 1;
             }
-            catch
-            {
-                return false;
-            }
-
         }
+
     }
 }

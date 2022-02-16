@@ -42,6 +42,7 @@ namespace AnimalServices.Services
                 var query =
                     ctx
                         .HealthRecords
+                        .Where(e => e.AnimalId == e.AnimalId)
                         .Select(
                             e =>
                                 new HealthRecordListItem
@@ -49,14 +50,14 @@ namespace AnimalServices.Services
                                     HealthRecordId = e.HealthRecordId,
                                     AnimalId = e.AnimalId,
                                     RecordType = e.RecordType,
-                                    DateGiven = e.DateGiven,
-                                    FrequencyNeeded = e.FrequencyNeeded
+                                    DateGiven = e.DateGiven
                                 }
                         );
 
                 return query.ToArray();
             }
         }
+            
 
         public HealthRecordDetail GetHealthRecordById(int id)
         {
@@ -65,16 +66,16 @@ namespace AnimalServices.Services
                 var entity =
                     ctx
                         .HealthRecords
-                        .Single(e => e.HealthRecordId == id);
+                        .Single(e => e.HealthRecordId == id && e.AnimalId == e.AnimalId);
                 return
                     new HealthRecordDetail
                     {
                         HealthRecordId = entity.HealthRecordId,
+                        AnimalId = entity.AnimalId,
                         RecordType = entity.RecordType,
                         DateGiven = entity.DateGiven,
                         FrequencyNeeded = entity.FrequencyNeeded,
-                        Comments = entity.Comments,
-                        AnimalId = entity.AnimalId
+                        Comments = entity.Comments
 
                     };
             }
@@ -88,7 +89,7 @@ namespace AnimalServices.Services
                     ctx
                         .HealthRecords
                         .Single(e => e.HealthRecordId == model.HealthRecordId);
-                entity.HealthRecordId = model.HealthRecordId;
+                
                 entity.Comments = model.Comments;
 
 
@@ -103,7 +104,7 @@ namespace AnimalServices.Services
                 var entity =
                     ctx
                         .HealthRecords
-                        .Single(e => e.HealthRecordId == healthRecordId);
+                        .Single(e => e.HealthRecordId == healthRecordId && e.AnimalId == e.AnimalId);
 
                 ctx.HealthRecords.Remove(entity);
 

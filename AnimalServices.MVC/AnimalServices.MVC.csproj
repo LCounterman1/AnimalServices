@@ -49,6 +49,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -188,6 +190,10 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\barn.png" />
+    <Content Include="Content\Images\fyp.jpg" />
+    <Content Include="Content\Images\fyp2.jpg" />
+    <Content Include="Content\Images\livestock.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -239,11 +245,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Animal\Index.cshtml" />
-    <Content Include="Views\Animal\Create.cshtml" />
-    <Content Include="Views\Animal\Details.cshtml" />
-    <Content Include="Views\Animal\Edit.cshtml" />
-    <Content Include="Views\Animal\Delete.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\DateTimeOffset.cshtml" />
     <Content Include="Views\HealthRecord\Details.cshtml" />
     <Content Include="Views\HealthRecord\Index.cshtml" />
@@ -265,6 +266,12 @@
     <Content Include="Views\Clinic\Delete.cshtml" />
     <Content Include="Views\Registry\Delete.cshtml" />
     <Content Include="Views\Service\Delete.cshtml" />
+    <Content Include="Views\Animal\Delete.cshtml" />
+    <Content Include="Views\Animal\Edit.cshtml" />
+    <Content Include="Views\Animal\Details.cshtml" />
+    <Content Include="Views\Animal\Create.cshtml" />
+    <Content Include="Views\Animal\Index.cshtml" />
+    <Content Include="Views\Account\RegisterRole.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -295,6 +302,9 @@
       <Project>{7963b580-c4f3-4e98-a202-4c5b482a4cc9}</Project>
       <Name>AnimalServices.Services</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

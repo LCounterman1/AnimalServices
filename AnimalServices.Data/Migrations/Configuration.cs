@@ -9,7 +9,7 @@ namespace AnimalServices.Data.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
             ContextKey = "AnimalServices.Data.ApplicationDbContext";
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AnimalServices.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace AnimalServices.Models.Service
     public class ServiceEdit
     {
         public int ServiceId { get; set; }
+        public ServiceType ServiceType { get; set; }
         public int Price { get; set; }
         public int Length { get; set; }
     }

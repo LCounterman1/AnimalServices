@@ -44,12 +44,6 @@ namespace AnimalServices.MVC.Controllers
             return View(model);
         }
 
-        private HealthRecordService CreateHealthRecordService()
-        {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new HealthRecordService(userId);
-            return service;
-        }
 
         public ActionResult Details(int id)
         {
@@ -66,6 +60,8 @@ namespace AnimalServices.MVC.Controllers
             var model =
                 new HealthRecordEdit
                 {
+                    HealthRecordId = detail.HealthRecordId,
+                    AnimalId = detail.AnimalId,
                     Comments = detail.Comments,
                 };
             return View(model);
@@ -116,6 +112,13 @@ namespace AnimalServices.MVC.Controllers
             TempData["SaveResult"] = "Your health record was deleted";
 
             return RedirectToAction("Index");
+        }
+
+        private HealthRecordService CreateHealthRecordService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new HealthRecordService(userId);
+            return service;
         }
     }
 }

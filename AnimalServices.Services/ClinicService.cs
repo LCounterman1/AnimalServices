@@ -21,6 +21,7 @@ namespace AnimalServices.Services
             var entity =
                 new Clinic()
                 {
+                 ClinicOwnerId = _userId,
                  Name = model.Name,
                  Address = model.Address,
                  ClinicType = model.ClinicType,
@@ -40,8 +41,8 @@ namespace AnimalServices.Services
                 var query =
                     ctx
                         .Clinics
-                        .Select(
-                            e =>
+                        .Where(e => e.ClinicOwnerId == _userId)
+                        .Select(e =>
                                 new ClinicListItem
                                 {
                                     ClinicId = e.ClinicId,
@@ -62,7 +63,7 @@ namespace AnimalServices.Services
                 var entity =
                     ctx
                         .Clinics
-                        .Single(e => e.ClinicId == id);
+                        .Single(e => e.ClinicId == id && e.ClinicOwnerId == _userId);
                 return
                     new ClinicDetail
                     {
@@ -81,8 +82,7 @@ namespace AnimalServices.Services
                 var entity =
                     ctx
                         .Clinics
-                        .Single(e => e.ClinicId == model.ClinicId);
-                entity.ClinicId = model.ClinicId;
+                        .Single(e => e.ClinicId == model.ClinicId && e.ClinicOwnerId == _userId);
                 entity.Name = model.Name;
                 entity.Address = model.Address;
                 entity.ClinicType = model.ClinicType;
@@ -99,7 +99,7 @@ namespace AnimalServices.Services
                 var entity =
                     ctx
                         .Clinics
-                        .Single(e => e.ClinicId == clinicId);
+                        .Single(e => e.ClinicId == clinicId && e.ClinicOwnerId == _userId);
 
                 ctx.Clinics.Remove(entity);
 

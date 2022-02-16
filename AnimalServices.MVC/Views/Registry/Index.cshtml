@@ -12,34 +12,45 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.RegistryId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnimalId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ServiceId)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.AptDate)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.AptTime)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AnimalID)
-        </th>
-        <th></th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.AptDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AptTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AnimalID)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.RegistryId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AnimalId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ServiceId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AptDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AptTime)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.RegistryId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.RegistryId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.RegistryId })
+    </td>
+</tr>
 }
 
 </table>

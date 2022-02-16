@@ -66,7 +66,10 @@ namespace AnimalServices.MVC.Controllers
             var model =
                 new RegistryEdit
                 {
-                    
+                    RegistryId = detail.RegistryId,
+                    AptDate = detail.AptDate,
+                    AptTime = detail.AptTime
+
                 };
             return View(model);
         }
