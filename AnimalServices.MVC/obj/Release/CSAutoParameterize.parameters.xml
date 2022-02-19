@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=tcp:animalservicesdbserver.database.windows.net,1433;Initial Catalog=AnimalServices.MVC_db;User Id=LCounterman@animalservicesdbserver;Password=Counterman00;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\ElevenFiftyProjects\\3_RedBadge\\AnimalServices\.MVC\\AnimalServices\.MVC\\AnimalServices\.MVC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="AnimalServices.Data.ApplicationDbContext-Web.config Connection String" description="AnimalServices.Data.ApplicationDbContext Connection String used in web.config by the application to access the database." defaultValue="AnimalServices.Data.ApplicationDbContext_ConnectionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\ElevenFiftyProjects\\3_RedBadge\\AnimalServices\.MVC\\AnimalServices\.MVC\\AnimalServices\.MVC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='AnimalServices.Data.ApplicationDbContext']/@connectionString" />
+  </parameter>
+  <parameter name="AnimalServices.Data.ApplicationDbContext_DatabasePublish-Web.config Connection String" description="AnimalServices.Data.ApplicationDbContext_DatabasePublish Connection String used in web.config by the application to access the database." defaultValue="AnimalServices.Data.ApplicationDbContext_DatabasePublish.ConnetionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\ElevenFiftyProjects\\3_RedBadge\\AnimalServices\.MVC\\AnimalServices\.MVC\\AnimalServices\.MVC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='AnimalServices.Data.ApplicationDbContext_DatabasePublish']/@connectionString" />
+  </parameter>
+</parameters>

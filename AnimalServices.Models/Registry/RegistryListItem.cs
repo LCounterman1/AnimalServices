@@ -13,6 +13,8 @@ namespace AnimalServices.Models.Registry
         public DateTime AptDate { get; set; }
         public DateTime AptTime { get; set; }
         public int ServiceId { get; set; }
+        public ServiceType TypeOfService { get; set; }
         public int AnimalId { get; set; }
+        public string AnimalName { get; set; }
     }
 }

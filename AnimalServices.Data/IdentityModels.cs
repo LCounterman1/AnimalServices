@@ -33,6 +33,7 @@ namespace AnimalServices.Data
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
+
         }
 
         public DbSet<Animal> Animals { get; set; }
@@ -40,7 +41,7 @@ namespace AnimalServices.Data
         public DbSet<Clinic> Clinics { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<Registry> Registries { get; set; }
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder

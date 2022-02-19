@@ -5,6 +5,7 @@ namespace AnimalServices.MVC.Models
 {
     public class ExternalLoginConfirmationViewModel
     {
+     
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
@@ -48,6 +49,8 @@ namespace AnimalServices.MVC.Models
 
     public class LoginViewModel
     {
+       
+
         [Required]
         [Display(Name = "Email")]
         [EmailAddress]
@@ -70,6 +73,8 @@ namespace AnimalServices.MVC.Models
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
+
+     
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]

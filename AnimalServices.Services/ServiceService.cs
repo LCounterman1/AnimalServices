@@ -51,6 +51,7 @@ namespace AnimalServices.Services
                                     ServiceId = e.ServiceId,
                                     ServiceType = e.ServiceType,
                                     ClinicId = e.ClinicId,
+                                    ClinicName = e.Clinic.Name,
                                     Price = e.Price,
                                     Length = e.Length
 

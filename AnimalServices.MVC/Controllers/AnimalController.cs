@@ -1,9 +1,12 @@
-﻿using AnimalServices.Models.Animal;
+﻿using AnimalServices.Data;
+using AnimalServices.Models.Animal;
 using AnimalServices.Services;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -12,7 +15,8 @@ namespace AnimalServices.MVC.Controllers
     [Authorize]
     public class AnimalController : Controller
     {
-        public ActionResult Index()
+       
+        public ActionResult Index(string sortOrder)
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new AnimalService(userId);
@@ -20,7 +24,7 @@ namespace AnimalServices.MVC.Controllers
             return View(model);
         }
 
-        public ActionResult Create()
+            public ActionResult Create()
         {
             return View();
         }

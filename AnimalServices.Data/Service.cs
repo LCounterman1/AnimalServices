@@ -13,7 +13,7 @@ namespace AnimalServices.Data
     {
         [Key]
         public int ServiceId { get; set; }
-        [Required]
+        
         public ServiceType ServiceType { get; set; }
         public int Price { get; set; }
         public int Length { get; set; }

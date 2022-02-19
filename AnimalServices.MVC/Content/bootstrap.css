@@ -5033,11 +5033,11 @@ a.badge:focus {
   margin-left: 3px;
 }
 .jumbotron {
-  padding-top: 30px;
+  padding-top: 40px;
   padding-bottom: 30px;
   margin-bottom: 30px;
   color: inherit;
-  background-color: #eeee;
+  background-color: none;
 }
 .jumbotron h1,
 .jumbotron .h1 {
@@ -5047,13 +5047,14 @@ a.badge:focus {
   margin-bottom: 15px;
   font-size: 21px;
   font-weight: 200;
+  font-family: 'Times New Roman', Times, serif;
 }
 .jumbotron > hr {
   border-top-color: #d5d5d5;
 }
 .container .jumbotron,
 .container-fluid .jumbotron {
-  padding-right: 15px;
+  padding-right: 30px;
   padding-left: 15px;
   border-radius: 6px;
 }

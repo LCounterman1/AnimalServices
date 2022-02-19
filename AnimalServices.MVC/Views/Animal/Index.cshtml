@@ -4,14 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Animals</h2>
 
-<p>
-    <a href="https://localhost:44381/Animal/Create" class="btn btn-primary btn-lg">Add an Animal</a>
-    <a href="https://localhost:44381/Animal/Edit" class="btn btn-primary btn-lg">Edit an Animal</a>
-    <a href="https://localhost:44381/Animal/Details" class="btn btn-primary btn-lg">Animal Details</a>
-    <a href="https://localhost:44381/Animal/Delete" class="btn btn-primary btn-lg">Delete an Animal</a>
-</p>
 
 
 <p>
@@ -28,47 +21,47 @@
         @TempData["SaveResult"]
     </div>
 }
-
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.AnimalId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Species)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DateOfBirth)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+<h2>Animals</h2>
+    <table class="table">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.AnimalId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Species)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateOfBirth)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.AnimalId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.AnimalId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.AnimalId })
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.AnimalId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Species)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </th>
+            <th></th>
         </tr>
-    }
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AnimalId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Species)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfBirth)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.AnimalId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.AnimalId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.AnimalId })
+                </td>
+            </tr>
+        }
+
+    </table>
 
 

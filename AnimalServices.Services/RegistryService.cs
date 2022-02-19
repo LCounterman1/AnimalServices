@@ -18,11 +18,12 @@ namespace AnimalServices.Services
         }
         public bool CreateRegistry(RegistryCreate registry)
         {
+           
             var entity =
                 new Registry()
                 {
                     AptDate = registry.AptDate,
-                    AptTime = registry.AptDate,
+                    AptTime = registry.AptTime,
                     AnimalId = registry.AnimalId,
                     ServiceId = registry.ServiceId
                 };
@@ -47,7 +48,9 @@ namespace AnimalServices.Services
                                 {
                                     RegistryId = e.RegistryId,
                                     AnimalId = e.AnimalId,
+                                    AnimalName = e.Animal.Name,
                                     ServiceId = e.ServiceId,
+                                    TypeOfService = e.Service.ServiceType,
                                     AptDate = e.AptDate,
                                     AptTime = e.AptTime,
                                 }

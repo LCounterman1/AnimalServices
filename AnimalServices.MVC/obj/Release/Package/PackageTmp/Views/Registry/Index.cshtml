@@ -1,0 +1,56 @@
+﻿@model IEnumerable<AnimalServices.Models.Registry.RegistryListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RegistryId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnimalId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ServiceId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AptDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AptTime)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.RegistryId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AnimalId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ServiceId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AptDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AptTime)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.RegistryId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.RegistryId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.RegistryId })
+    </td>
+</tr>
+}
+
+</table>

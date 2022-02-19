@@ -4,11 +4,19 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Animal Clinics</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <center>
+    
+        <img src="~/Content/Images/clinic.jpg" width="350" height="150" />
+        <img src="~/Content/Images/inside.jpg" width="350" height="150" />
+        <img src="~/Content/Images/cow.jpg" width="350" height="150" />
+    </center>
 </p>
+<br />
+@Html.ActionLink("Create New", "Create")
+<br/>
 
 @if (TempData.ContainsKey("SaveResult"))
 {
@@ -23,6 +31,7 @@
 
 <table class="table">
     <tr>
+
         <th>
             @Html.DisplayNameFor(model => model.ClinicId)
         </th>
@@ -40,6 +49,7 @@
 
     @foreach (var item in Model)
     {
+
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.ClinicId)
@@ -60,5 +70,6 @@
             </td>
         </tr>
     }
-
 </table>
+
+

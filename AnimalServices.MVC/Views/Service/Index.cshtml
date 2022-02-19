@@ -4,10 +4,14 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 
+<br/>
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <center>
+        <img src="~/Content/Images/vaccine.jpg" height="200" weight="200" />
+        <img src="~/Content/Images/grooming.jpg" height="200" weight="200" />
+        <img src="~/Content/Images/dental.png" height="200" weight="200" />
+    </center>
 </p>
 
 @if (TempData.ContainsKey("SaveResult"))
@@ -20,7 +24,9 @@
         @TempData["SaveResult"]
     </div>
 }
-
+<h2>Services</h2>
+@Html.ActionLink("Create New", "Create")
+   
 <table class="table">
     <tr>
         <th>
@@ -30,7 +36,7 @@
             @Html.DisplayNameFor(model => model.ServiceType)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ClinicId)
+            @Html.DisplayNameFor(model => model.ClinicName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Price)
@@ -51,7 +57,7 @@
                 @Html.DisplayFor(modelItem => item.ServiceType)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ClinicId)
+                @Html.DisplayFor(modelItem => item.ClinicName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Price)

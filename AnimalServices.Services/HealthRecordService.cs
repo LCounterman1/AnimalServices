@@ -49,6 +49,7 @@ namespace AnimalServices.Services
                                 {
                                     HealthRecordId = e.HealthRecordId,
                                     AnimalId = e.AnimalId,
+                                    AnimalName = e.Animal.Name,
                                     RecordType = e.RecordType,
                                     DateGiven = e.DateGiven
                                 }
